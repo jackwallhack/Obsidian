@@ -6300,8 +6300,8 @@ function Library:CreateWindow(WindowInfo)
 
             Button.Label.Visible = false
             Button.Padding.PaddingBottom = UDim.new(0, IsCompact and 6 or 11)
-            Button.Padding.PaddingLeft = UDim.new(0, IsCompact and 6 or 12)
-            Button.Padding.PaddingRight = UDim.new(0, IsCompact and 6 or 12)
+            Button.Padding.PaddingLeft = UDim.new(0, 6)
+            Button.Padding.PaddingRight = UDim.new(0, 6)
             Button.Padding.PaddingTop = UDim.new(0, IsCompact and 6 or 11)
             Button.Icon.SizeConstraint = IsCompact and Enum.SizeConstraint.RelativeXY or Enum.SizeConstraint.RelativeYY
         end
@@ -6388,8 +6388,8 @@ function Library:CreateWindow(WindowInfo)
             })
             local ButtonPadding = New("UIPadding", {
                 PaddingBottom = UDim.new(0, IsCompact and 6 or 11),
-                PaddingLeft = UDim.new(0, IsCompact and 6 or 12),
-                PaddingRight = UDim.new(0, IsCompact and 6 or 12),
+                PaddingLeft = UDim.new(0, 6),
+                PaddingRight = UDim.new(0, 6),
                 PaddingTop = UDim.new(0, IsCompact and 6 or 11),
                 Parent = TabButton,
             })
@@ -7106,8 +7106,8 @@ function Library:CreateWindow(WindowInfo)
             })
             local ButtonPadding = New("UIPadding", {
                 PaddingBottom = UDim.new(0, IsCompact and 6 or 11),
-                PaddingLeft = UDim.new(0, IsCompact and 6 or 12),
-                PaddingRight = UDim.new(0, IsCompact and 6 or 12),
+                PaddingLeft = UDim.new(0, 6),
+                PaddingRight = UDim.new(0, 6),
                 PaddingTop = UDim.new(0, IsCompact and 6 or 11),
                 Parent = TabButton,
             })
