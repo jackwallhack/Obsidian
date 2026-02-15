@@ -6038,6 +6038,7 @@ function Library:CreateWindow(WindowInfo)
             Size = UDim2.new(0, X, 1, 0),
             Text = WindowInfo.Title,
             TextSize = 20,
+            Visible = false,
             Parent = TitleHolder,
         })
 
