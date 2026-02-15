@@ -6288,7 +6288,7 @@ function Library:CreateWindow(WindowInfo)
             IsCompact = Window:GetSidebarWidth() <= WindowInfo.CompactWidthActivation
         end
 
-        WindowTitle.Visible = not IsCompact
+        WindowTitle.Visible = false
         if not WindowInfo.Icon then
             WindowIcon.Visible = IsCompact
         end
@@ -6298,7 +6298,7 @@ function Library:CreateWindow(WindowInfo)
                 continue
             end
 
-            Button.Label.Visible = not IsCompact
+            Button.Label.Visible = false
             Button.Padding.PaddingBottom = UDim.new(0, IsCompact and 6 or 11)
             Button.Padding.PaddingLeft = UDim.new(0, IsCompact and 6 or 12)
             Button.Padding.PaddingRight = UDim.new(0, IsCompact and 6 or 12)
