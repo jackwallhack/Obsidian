@@ -3107,12 +3107,14 @@ do
             Data.Text = Params.Text or ""
             Data.DoesWrap = Params.DoesWrap or false
             Data.Size = Params.Size or 14
+            Data.Color = Params.Color or nil
             Data.Visible = Params.Visible or true
             Data.Idx = typeof(Second) == "table" and First or nil
         else
             Data.Text = First or ""
             Data.DoesWrap = Second or false
             Data.Size = 14
+            Data.Color = nil
             Data.Visible = true
             Data.Idx = select(3, ...) or nil
         end
@@ -3123,6 +3125,7 @@ do
         local Label = {
             Text = Data.Text,
             DoesWrap = Data.DoesWrap,
+            Color = Data.Color,
 
             Addons = Addons,
 
@@ -3139,6 +3142,11 @@ do
             TextXAlignment = Groupbox.IsKeyTab and Enum.TextXAlignment.Center or Enum.TextXAlignment.Left,
             Parent = Container,
         })
+        
+        if Data.Color then
+            TextLabel.TextColor3 = Data.Color
+            Library:RemoveFromRegistry(TextLabel)
+        end
 
         function Label:SetVisible(Visible: boolean)
             Label.Visible = Visible
@@ -3158,6 +3166,12 @@ do
             end
 
             Groupbox:Resize()
+        end
+        
+        function Label:SetColor(Color: Color3)
+            Label.Color = Color
+            TextLabel.TextColor3 = Color
+            Library:RemoveFromRegistry(TextLabel)
         end
 
         if Label.DoesWrap then
