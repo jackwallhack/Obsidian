@@ -7187,7 +7187,11 @@ function Library:CreateWindow(WindowInfo)
             IsKeyTab = true,
         }
 
-        function Tab:AddKeyBox(Callback)
+        function Tab:AddKeyBox(Key, Callback)
+            if typeof(Key) == "function" then
+                Callback = Key
+                Key = nil
+            end
             assert(typeof(Callback) == "function", "Callback must be a function")
 
             local Holder = New("Frame", {
@@ -7233,7 +7237,12 @@ function Library:CreateWindow(WindowInfo)
                     return
                 end
 
-                Callback(Box.Text)
+                if Key then
+                    local Success = Box.Text == Key
+                    Callback(Success, Box.Text)
+                else
+                    Callback(true, Box.Text)
+                end
             end)
         end
 
